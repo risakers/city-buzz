@@ -26,11 +26,15 @@
 				<% else %>
 					<%= link_to "Like", event_like_path(event), method: :post %> |
 				<% end %>
-				
-				<%= event.likes.count %> Users like this<br>
+
+				<br>
+				<%= event.likes.count %> Users like this!<br>
+				<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "button btn btn-primary btn-xs" %>
+
 			</div>
 		</div>
 	<!-- </div> -->
 	<% end %>
 
 </div>
+

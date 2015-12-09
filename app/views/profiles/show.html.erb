@@ -1,3 +1,4 @@
+
 <div class="profile-heading">
 	<%= image_tag @user.avatar(:thumb) %>
 	<h1> <%= @user.username %> </h1>
@@ -5,6 +6,7 @@
 </div>
 
 
+<div id="map-canvas"></div>
 
 <% if @user.status == 'business' %>
 <div class="profile-info">
