@@ -1,12 +1,14 @@
 <center><%= image_tag @user.avatar(:thumb) %></center>
 <h1> <%= @user.username %> </h1>
 <center><%= @user.description %></center>
+<p>Come Visit Us!</p>
 <p><%= @user.address %></p>
 <p><%= @user.email %></p>
 <p><%= @user.city %> </p>
 <p>Hours: <%= @user.hours %></p>
-
 <p>Business: <%= @user.status %></p>
+
+<div id="map-canvas"></div>
 
 <% if @user.status == 'business' %>
 	<h3>Recent Posts:</h3>

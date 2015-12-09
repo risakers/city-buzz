@@ -22,8 +22,10 @@
 				<% end %>
 				<br>
 				<%= event.likes.count %> Users like this!<br>
+				<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "button btn btn-primary btn-xs" %>
 			</div>
 		</div>
 	<!-- </div> -->
 	<% end %>
 </div>
+

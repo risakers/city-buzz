@@ -57,3 +57,9 @@ h4 {
 	margin: 20px;
 	margin-right: 20px;
 }
+
+
+#map-canvas {
+  width: 20%;
+  height: 300px;
+}
