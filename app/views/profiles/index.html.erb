@@ -6,7 +6,7 @@
 <% if user.status == 'business' %>
 <div class="grid">
 	<%= image_tag user.avatar(:thumb) %>
-	<h3><%= link_to user.username, profile_path(user) %></h3>
+	<h4><%= link_to user.username, profile_path(user) %></h4>
 </div>
 <% end %>
 <% end %>
@@ -18,7 +18,7 @@
 <% if user.status == 'customer' %>
 <div class="grid">
 	<%= image_tag user.avatar(:thumb) %>
-	<h3><%= link_to user.username, profile_path(user) %></h3>
+	<h4><%= link_to user.username, profile_path(user) %></h4>
 </div>
 <% end %>
 <% end %>
