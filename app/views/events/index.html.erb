@@ -6,7 +6,6 @@
 </dif>
 
 
-<!-- <div class="row"> -->
 <div class="allblocks">
 	<% @events.reverse_each do |event| %>
 		<div class="panel-block">
@@ -27,13 +26,10 @@
 					<%= link_to "Like", event_like_path(event), method: :post %> |
 				<% end %>
 
-				<br>
-				<%= event.likes.count %> Users like this!<br>
-				<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "button btn btn-primary btn-xs" %>
+				<%= event.likes.count %> Users like this<br>
 
 			</div>
 		</div>
-	<!-- </div> -->
 	<% end %>
 
 </div>

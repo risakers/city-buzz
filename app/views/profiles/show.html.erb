@@ -19,14 +19,23 @@
 			<% @user.events.reverse_each do |event| %>
 				<div class="panel-block">
 					<div class="panel-heading">
-						<h5><%= link_to event.user.username, profile_path(event.user) %></h5>
+						<h3><%= link_to event.user.username, profile_path(event.user) %></h3>
 					</div>
 					<div class="panel-body">
-						<h3><%= event.message %></h3>
-						<%= image_tag event.image(:thumb) %><br>
+						<div class="panel-image">
+							<%= image_tag event.image(:thumb) %><br>
+						</div>
+						<h4><%= event.message %></h4>
 						<%= link_to "More info", event_path(event) %><br>
 
-						<%= event.likes.count %> Users likes this<br>
+						<% if current_user.likes?(event) %>
+ 							<%= link_to "Unlike", event_like_path(event), method: :delete %> |
+						<% else %>
+							<%= link_to "Like", event_like_path(event), method: :post %> |
+						<% end %>
+
+						<%= event.likes.count %> Users like this<br>
+
 					</div>
 				</div>
 			<% end %>
@@ -38,11 +47,13 @@
 			<% @user.likes.reverse_each do |like| %>
 				<div class="panel-block">
 					<div class="panel-heading">
-						<h5><%= link_to like.event.user.username, profile_path(like.event.user) %></h5>
+						<h3><%= link_to like.event.user.username, profile_path(like.event.user) %></h3>
 					</div>
 					<div class="panel-body">
-						<h3><%= like.event.message %></h3>
-						<%= image_tag like.event.image(:thumb) %><br>
+						<div class="panel-image">
+							<%= image_tag like.event.image(:thumb) %><br>
+						</div>
+						<h4><%= like.event.message %></h4>
 						<%= link_to "More info", event_path(like.event) %><br>
 
 						<% if current_user.likes?(like.event) %>
@@ -52,6 +63,7 @@
 						<% end %>
 
 						<%= like.event.likes.count %> Users like this<br>
+
 					</div>
 				</div>
 			<% end %>
