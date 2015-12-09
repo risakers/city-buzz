@@ -1,29 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>The City Buzz</h1>
-<h4>Event Feed</h4>
+<dif class="header">
+	<h1>The City Buzz</h1>
+	<h4>Event Feed</h4>
+</dif>
 
 
 <!-- <div class="row"> -->
 <div class="allblocks">
 	<% @events.reverse_each do |event| %>
-		<div class="panel blocks">
+		<div class="panel-block">
 			<div class="panel-heading">
-				<h5><%= link_to event.user.username, profile_path(event.user) %></h5>
+				<h3><%= link_to event.user.username, profile_path(event.user) %></h3>
 			</div>
 			<div class="panel-body">
-				<h3><%= event.message %></h3>
-				<%= image_tag event.image(:thumb) %><br>
+				<div class="panel-image">
+					<%= image_tag event.image(:thumb) %><br>
+				</div>
+				<h4><%= event.message %></h4>
 				<%= link_to "More info", event_path(event) %><br>
+
+
 				<% if current_user.likes?(event) %>
- 					<%= link_to "Unlike", event_like_path(event), method: :delete %>
+ 					<%= link_to "Unlike", event_like_path(event), method: :delete %> |
 				<% else %>
-					<%= link_to "Like", event_like_path(event), method: :post %>
+					<%= link_to "Like", event_like_path(event), method: :post %> |
 				<% end %>
-				<br>
-				<%= event.likes.count %> Users like this!<br>
+				
+				<%= event.likes.count %> Users like this<br>
 			</div>
 		</div>
 	<!-- </div> -->
 	<% end %>
+
 </div>

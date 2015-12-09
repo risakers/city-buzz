@@ -1,10 +1,21 @@
-<h1> <%= @event.user.username %> </h1>
-<%= image_tag @event.image(:medium) %>
-<h3><%= @event.message %></h3>
-<p><%= @event.id %></p>
-<%= render "shared/likes" %>
+<div class="event-block">
+	<div class="event-heading">
+		<h1> <%= link_to @event.user.username, profile_path(@event.user) %> </h1>
+	</div>
+	<div class="event-body">
+		<div class="event-image">
+			<%= image_tag @event.image(:medium) %>
+		</div>
+		<h3><%= @event.message %></h3>
+		<%= render "shared/likes" %>
+	</div>
+</div>
+	
 
 
+
+
+<br><br>
 <% if current_user.id == @event.user_id %>
 <%= link_to "Edit this event", edit_event_path(@event) %> <br>
 <% end %>

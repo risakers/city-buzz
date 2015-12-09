@@ -1,0 +1,127 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.navbar-inverse .navbar-nav>li>a {
+	color: #000;
+	font-size: 16px;
+}
+
+body {
+	padding: 65px 10px;
+	/*background-color: #59656F;*/
+	background-image: url(<%= asset_path 'skyline.png' %>);
+	background-size: 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+a {
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000;
+}
+
+.header h1 {
+	padding-top: 40px;
+	text-align: center;
+}
+
+.header h4 {
+	text-align: center;
+	padding-bottom: 150px;
+}
+
+.allblocks {
+	margin: auto;
+	width: 98%;
+}
+
+.panel-body, .event-body {
+	padding: 0 0 0 0;
+	text-align: center;
+}
+
+.panel-heading, .event-heading {
+	text-align: center;
+	background-color: rgba(71, 93, 142, 0.50);
+	margin-bottom: 10px;
+}
+
+.panel-block {
+	/*position: absolute;*/
+	background-color: rgba(71, 93, 142, 0.65);
+	min-width: 250px;
+	width: 30%;
+	margin: 1.5%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.panel-block .h5 {
+	vertical-align: bottom;
+}
+
+.panel-image {
+	width: 200px;
+	margin: auto;
+}
+
+.event-block {
+	background-color: rgba(71, 93, 142, 0.65);
+	width: 40%;
+	min-width: 375px;
+	margin: 40px 0 0 40px;
+}
+
+
+.event-heading {
+	height: 50px;
+}
+
+.profile-heading {
+	/*width: 45%;*/
+	text-align: center;
+	margin: 20px auto;
+}
+
+.profile-info {
+	width: 45%;
+	margin: 20px 0;
+}
+
+
+.container-fluid {
+	background-color: #475D8E;
+
+}
+
+.navbar .navbar-brand {
+	background-image: url(<%= asset_path 'logo.png' %>);
+	background-repeat: no-repeat;
+	width: 200px;
+	float: left;
+	margin: 10px 0 0 0;
+	text-indent: -9999px;
+}
+
+.grid {
+	display: inline-block;
+	margin: 20px;
+	margin-right: 20px;
+}
