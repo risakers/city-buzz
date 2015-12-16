@@ -25,7 +25,7 @@
 						<div class="panel-image">
 							<%= image_tag event.image(:thumb) %><br>
 						</div>
-						<%= event.created_at.strftime("%A, %B %d") %>
+						<p><%= event.created_at.strftime("%A, %B %d") %><p>
 						<h4><%= event.message %></h4>
 						<%= link_to "More info", event_path(event) %><br>
 
@@ -54,7 +54,7 @@
 						<div class="panel-image">
 							<%= image_tag like.event.image(:thumb) %><br>
 						</div>
-						<%= like.event.created_at.strftime("%A, %B %d") %>
+						<p><%= like.event.created_at.strftime("%A, %B %d") %></p>
 						<h4><%= like.event.message %></h4>
 						<%= link_to "More info", event_path(like.event) %><br>
 

@@ -46,7 +46,7 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to event_url, notice: 'Event was sucessfully destroyed'}
+      format.html { redirect_to root_path, notice: 'Event was sucessfully destroyed'}
     end
   end
 

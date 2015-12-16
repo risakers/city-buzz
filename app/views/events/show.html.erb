@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <div class="event-block">
 	<div class="event-heading">
 		<h1> <%= link_to @event.user.username, profile_path(@event.user) %> </h1>
@@ -6,7 +8,7 @@
 		<div class="event-image">
 			<%= image_tag @event.image(:medium) %>
 		</div>
-		<%= @event.created_at.strftime("%A, %B %d") %>
+		<p><%= @event.created_at.strftime("%A, %B %d") %></p>
 		<h3><%= @event.message %></h3>
 		<%= render "shared/likes" %>
 	</div>

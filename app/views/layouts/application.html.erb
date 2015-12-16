@@ -8,6 +8,7 @@
 	<%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" %>
+  <link href='https://fonts.googleapis.com/css?family=Khula:400,300' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tag %>
 
 </head>
@@ -32,8 +33,7 @@
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
     <% end %>
       </ul>
-		
-	</div>
+		</div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
   <% if user_signed_in? %>
@@ -50,6 +50,10 @@
 
   </div><!-- /.container-fluid -->
 </nav>
+
+<% unless current_page?(root_path) %>
+<div class="backbutton"> <%= link_to 'Back to Event list', root_path %></div>
+<% end %>
 
 <%= yield %>
 
