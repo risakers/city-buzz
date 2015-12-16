@@ -6,6 +6,7 @@
 		<div class="event-image">
 			<%= image_tag @event.image(:medium) %>
 		</div>
+		<%= @event.created_at.strftime("%A, %B %d") %>
 		<h3><%= @event.message %></h3>
 		<%= render "shared/likes" %>
 	</div>
